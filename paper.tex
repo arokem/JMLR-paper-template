@@ -1,0 +1,166 @@
+\documentclass[twoside,11pt]{article}
+
+% Any additional packages needed should be included after jmlr2e.
+% Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; for more information on
+% natbib citation styles, see the natbib documentation, a copy of which
+% is archived at http://www.jmlr.org/format/natbib.pdf
+
+\usepackage{jmlr2e}
+
+% Definitions of handy macros can go here
+
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+
+% Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
+
+% Short headings should be running head and authors last names
+\ShortHeadings{A Really Awesome MLHC Article}{Lastname, PhD and Lastname, MD}
+\firstpageno{1}
+
+\begin{document}
+
+\title{A Really Awesome MLHC Article}
+
+\author{\name Firstname Lastname \email name@email.edu \\
+       \addr Department of Health Research\\
+       University of Awesome\\
+       Some Fair City, State, Country 
+       \AND
+       \name Firstname Lastname \email name@email.edu \\
+       \addr Department of Health Research\\
+       University of Other Kinds of Awesome\\
+       Some Fair City, State, Country} 
+
+\maketitle
+
+\begin{abstract}
+  Summary of the article, a short paragraph will do---doesn't have to
+  be in a structured format.  
+\end{abstract}
+
+\section{Introduction}
+
+Tells us a bit about the problem.  Recent advances in machine learning
+\citep{cite1} have resulted in great things happening in healthcare.
+In particular, \citet{cite2} describes a spiffy technique to save even
+more lives.  In this work, we...
+
+As you talk away, keep in mind that MLHC papers are meant to be read
+by computer scientists and clinicians.  In the later sections, you
+might have to use some medical terminology that a computer scientist
+may not be familiar with, and you might have to use some math that a
+clinician might not be familiar with.  That's okay, as long as you've
+done your best to make sure that the core ideas can be understood by
+an informed reader in either community.  And certainly this
+introduction should be readable by all! 
+
+\section{Cohort}
+
+Describe the cohort.  Give us the details of any inclusion/exclusion
+criteria, what data were extracted, how features were processed,
+etc. In fact, you probably will want headings for
+
+\subsection{Cohort Selection} 
+with choice of criteria and basic numbers, as well as any relevant
+information about the study design (such how cases and controls were
+identified, if appropriate), 
+
+\subsection{Data Extraction} 
+with what raw information you extracted or collected, including any
+assumptions and imputation that may have been used, and 
+
+\subsection{Feature Choices} 
+with how you might have converted the raw data into features that were
+used in your algorithm. 
+
+The goal is to provide enough detail so that someone could replicate
+the study.  For more clinical application papers, each of the sections
+above might be several paragraphs because we really want to understand
+the setting.  
+
+For the submission, please do \emph{not} include the name of the
+institutions for any private data sources.  However, in the
+camera-ready, you may include identifying information about the
+institution as well as should include any relevant IRB approval
+statements.  
+
+\section{Methods}
+
+Tell us your techniques!  If your paper is develops a novel machine
+learning method or extension, then be sure to give the technical
+details---as you would for a machine learning publication---here and,
+as needed, in appendices.  If your paper is developing new methods,
+this section might be several pages.  
+
+If you are combining existing methods, then you don't need to provide
+a ton of detail: feel free to just cite other packages and papers and
+tell us how you put them together.  
+
+\section{Results} 
+
+\subsection{Evaluation Approach/Study Design} 
+
+Before jumping into the results: what exactly are you evaluating?
+Tell us (or remind us) about your study design and evaluation
+criteria.  
+
+\subsection{Results on Application A} 
+
+Give us some numbers about how well your awesomeness works, especially
+in comparison to some baselines.  You should provide a summary of the
+results in the text, as well as in tables (such as
+table~\ref{tab:example}) and figures (such as figure~\ref{fig:example}).  
+
+You may use subfigures/wrapfigures so that figures don't have to span
+the whole page or multiple figures are side by side.
+
+\begin{table}[htbp]
+  \centering 
+  \caption{These are our results.} 
+  \begin{tabular}{|l|l|}\hline
+    Us & Top Score \\ \hline
+    Baseline & Less Impressive Score \\ \hline 
+  \end{tabular}
+  \label{tab:example} 
+\end{table}
+
+\begin{figure}[htbp]
+  \centering 
+  \includegraphics[width=1.5in]{smile.jpeg} 
+  \caption{Feeling awesome.}
+  \label{fig:example} 
+\end{figure} 
+
+\subsection{Results on Application B} 
+
+Did more than one experiment type?  Sweet! 
+
+\section{Discussion and Related Work} 
+
+This is where you give us some technical understanding about why your
+awesomeness is awesome, and maybe even some times when it isn't so we
+know when we should be using it.  Discuss both technical and clinical
+implications, as appropriate.  
+
+Make sure you also put your awesomeness in the context of related
+work.  Who else has worked on this problem, and how did they approach
+it?  What makes your direction interesting or distinct?
+
+% ACKNOWLEDGEMENTS ONLY GO IN THE CAMERA-READY, NOT THE SUBMISSION
+% \acks{Many thanks to all collaborators and funders!}
+
+\bibliography{paper}
+
+
+\appendix
+\section*{Appendix A.}
+
+Some more details about those methods, so we can actually reproduce
+them.  After the blind review period, you could link to a repository
+for the code also ;) 
+
+\end{document}
